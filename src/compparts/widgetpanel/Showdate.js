@@ -10,7 +10,7 @@ class Showdate extends React.Component {
     render() {
         return <div>
             <h2>Payment Started on</h2>
-            <h3 id="showdate"></h3>
+            <h3 id="showdate">showdate</h3>
         </div>;
     }
 }

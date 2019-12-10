@@ -1,10 +1,12 @@
-const claimHistory = (gridsheet = [], action) => {
+export const Executecalculation = (output = [], action) => {
     switch (action.type) {
-        case action.LOAN_CAL:
-            return [...gridsheet, action.payload];
-            break;
+        case "updateDate":
+            {
+                output = action.payload;
+                return [...output]
+            }
         default:
             break;
     }
-    return gridsheet;
+    return output;
 };

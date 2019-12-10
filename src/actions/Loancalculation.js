@@ -1,9 +1,3 @@
-import { createStore, combineReducers } from 'redux';
-
-const initialState = {
-    startingBalance: 1000
-}
-
 /*
 //Forms Inputs
 sdate = start_date
@@ -17,18 +11,19 @@ pmt: Monthly Payments,
 tpp: Total Principal Paid,
 tip: Total Interest Paid
 */
-const loanCalculation = (sdate, lamount, instamount, intrate, instint, pmt, tpp, tip) => {
+
+export const mapStateToProps = state => {
+    console.log('state.output :', state.Executecalculation);
     return {
-        type: 'LOAN_CAL',
-        payload: {
-            sdate: sdate,
-            lamount: lamount,
-            instamount: instamount,
-            intrate: intrate,
-            instint: instint,
-            pmt: pmt,
-            tpp: tpp,
-            tip: tip
-        }
-    };
-};
+        output: state.Executecalculation
+    }
+}
+
+export const mapDispatchToProps = dispatch => ({
+    loanCalculation: (output) => {
+        console.log("action..........", output)
+        dispatch({
+            type: "updateDate", payload: output
+        })
+    }
+})

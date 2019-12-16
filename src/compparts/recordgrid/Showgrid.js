@@ -15,14 +15,12 @@ class Showgrid extends React.Component {
     }
 
     componentDidUpdate(preProps) {
-        console.log('this.prevprops.output :', preProps.output);
         if (preProps.output !== this.props.output) {
             this.setState({ output: this.props.output })
         }
     }
 
     render() {
-        console.log('this.props.output :', this.props.output);
         return <tbody id="out_put">
             {
                 this.state.output.length > 0 ? this.state.output.map(item => {

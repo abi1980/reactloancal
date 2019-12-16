@@ -13,7 +13,6 @@ tip: Total Interest Paid
 */
 
 export const mapStateToProps = state => {
-    console.log('state.output :', state.Executecalculation);
     return {
         output: state.Executecalculation
     }
@@ -21,9 +20,8 @@ export const mapStateToProps = state => {
 
 export const mapDispatchToProps = dispatch => ({
     loanCalculation: (output) => {
-        console.log("action..........", output)
         dispatch({
-            type: "updateDate", payload: output
+            type: "updateGrid", payload: output
         })
     }
 })

@@ -1,6 +1,6 @@
 export const Executecalculation = (output = [], action) => {
     switch (action.type) {
-        case "updateDate":
+        case "updateGrid":
             {
                 output = action.payload;
                 return [...output]
